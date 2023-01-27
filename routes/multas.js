@@ -4,23 +4,23 @@ var mongoose = require('mongoose');
 var router = express.Router();
 
 //Models
-var Movie = require('../models/Movie.js');
+var Multa = require('../models/Multa.js');
 
 var db = mongoose.connection;
 
-/* GET movies listing */
+/* GET multas listing */
 router.get('/', function (req, res) {
-    Movie.find().exec(function(err, movies) {
+    Multa.find().exec(function(err, multas) {
       if (err) res.status(500).send(err);
-      else res.status(200).json(movies);
+      else res.status(200).json(multas);
     });
 });
 
-/* GET single movie by Id */
+/* GET single multa by Id */
 router.get('/:id', function (req, res, next) {
-    Movie.findById(req.params.id, function (err, movieinfo) {
+    Multa.findById(req.params.id, function (err, multainfo) {
       if (err) res.status(500).send(err);
-      else res.status(200).json(movieinfo);
+      else res.status(200).json(multainfo);
     });
 });
 
