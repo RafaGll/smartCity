@@ -21,7 +21,7 @@ var mongoose = require('mongoose');
 require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() =>  console.log('mymerndb connection successful'))
+    .then(() =>  console.log('mydb connection successful'))
     .catch((err) => console.error(err));
 
 // view engine setup
