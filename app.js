@@ -19,7 +19,7 @@ var mongoose = require('mongoose');
 
 require('dotenv').config();
 
-mongoose.connect("mongodb+srv://ivan:practicaUbicuos@cluster0.32abbyk.mongodb.net/smartCity", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() =>  console.log('mydb connection successful'))
     .catch((err) => console.error(err));
 
