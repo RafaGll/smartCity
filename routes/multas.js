@@ -10,7 +10,7 @@ var db = mongoose.connection;
 
 /* GET multas listing */
 router.get('/', function (req, res) {
-    Multa.find().exec(function(err, multas) {
+    Multa.find().lean().exec(function(err, multas) {
       if (err) res.status(500).send(err);
       else res.status(200).json(multas);
     });
@@ -21,7 +21,7 @@ router.get('/:id', function (req, res, next) {
     Multa.findById(req.params.id, function (err, multainfo) {
       if (err) res.status(500).send(err);
       else res.status(200).json(multainfo);
-    });
+    }).lean();
 });
 
 module.exports = router;
